@@ -42,10 +42,8 @@ function showPrayers() {
         namazAfter.innerHTML = `Next Prayer Will Be Asr At <br/>  <h3 class="cl-g">${maghrib} pm </h3>`;
     } else if (newTime >= maghrib && newTime < isha) {
         namazAfter.innerHTML = `Next Prayer Will Be Isha At <br/>  <h3 class="cl-g">${isha} pm </h3>`;
-    } else if (newTime >= isha) {
+    } else  {
         namazAfter.innerHTML = `Next Prayer Will Be Fajr At <br/> <h3 class="cl-g">${fajr} am </h3> `;
-    } else {
-
     }
 }
 
