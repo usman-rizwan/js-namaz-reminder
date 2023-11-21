@@ -1,0 +1,288 @@
+* {
+  font-family: "Poppins", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.my-body {
+  background-color: #e3e4e3;
+}
+#showTime {
+  font-family: "Black Ops One", Cochin, Georgia, Times, "Times New Roman", serif !important;
+  font-weight: 200px !important;
+}
+.navbar-brand {
+  font-size: 30px;
+}
+/* .cont{
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+    background-color: #7bb82b !important;
+    color: white !important;
+    border: 10px solid rgb(255, 255, 255);  
+   
+} */
+/* .cont h1{
+    margin-top: 100px !important;
+    font-size: 50px;
+} */
+.navbar {
+  background-color: #328433 !important;
+}
+
+.container-fluid1 {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  flex-grow: 1;
+}
+
+.col-md-6 {
+  overflow-y: auto;
+  max-height: 100%;
+}
+.bg-gray {
+  background-color: #7bb82b;
+}
+.namaz {
+  font-size: 25px;
+}
+.cards {
+  background-color: #7bb82b;
+}
+.cl-g {
+  color: #7bb82b;
+}
+.f-lg{
+    font-size: 25px;
+    font-weight: 34px;
+}
+
+$amiko-stack: Amiko, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*colors*/
+$colors: (
+  "cyprus": hsl(198, 100%, 13%),
+  "ebb": hsl(0, 0%, 91%),
+  "corn": hsl(44, 95%, 48%),
+  "cerise": hsl(318, 100%, 50%),
+  "cadillac": hsl(318, 41%, 47%),
+  "tardis-blue": hsl(207, 100%, 18%),
+  //scheme-base
+  "sherpa-blue": hsl(198, 100%, 13%),
+  "calypso": hsl(197, 40%, 39%),
+  "spring-green": hsl(165, 95%, 48%),
+  "sunset-orange": hsl(5, 88%, 61%),
+  "cardinal": hsl(350, 78%, 42%),
+  //dark and light
+  "midnight": hsl(207, 100%, 8%),
+);
+
+$headerSizes: 48px 40px 31px 25px 20px 16px;
+$index: 1;
+
+@while $index <= 6 {
+  h#{$index},
+  .h#{$index} {
+    font-size: nth($headerSizes, $index);
+  }
+  $index: $index + 1;
+}
+
+.wrapper1 {
+  max-width: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-right: auto;
+  padding-left: auto;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.container1 {
+  padding: 2em;
+  margin: auto;
+}
+
+.card1 {
+  text-align: left;
+  padding: 1em;
+  margin: 1em;
+  border: 2px solid #d3d3d3;
+  border-radius: 0.5em;
+  .container1 {
+    padding: 0;
+    min-width: 300px;
+  }
+}
+
+.splitContent1 {
+  justify-content: space-between;
+  min-width: 50%;
+}
+
+.col1 {
+  flex: 1 2 0;
+  max-width: 100%;
+  &.col-auto {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.row1 {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -15px 0 -15px;
+}
+
+.cardSect1 {
+  align-content: center;
+
+  justify-content: center;
+  margin: 10px;
+  min-width: 180px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon1 {
+  .big {
+    font-size: 50px;
+  }
+  .medium {
+    font-size: 35px;
+  }
+  .small {
+    font-size: 20px;
+  }
+  .xs {
+    font-size: 10px;
+  }
+}
+
+.item1 {
+  & > .head1 {
+    text-align: center;
+    margin-bottoom: 5px;
+    .title1 {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .icon1 {
+      margin-bottom: 10px;
+    }
+  }
+  .content1 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .title1 {
+    text-align: center;
+  }
+  .cardSect1 {
+    justify-content: center;
+    min-height: 100px;
+  }
+  #dividerWrap1 {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 90%;
+  }
+
+  .item1 {
+    display: block;
+    min-width: 300;
+  }
+
+  .contentDivider1 {
+    margin: 15px 0 15px 0;
+    font-size: 20px;
+
+    .dividedText1 {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      &:before,
+      &:after {
+        content: "";
+        border-top: 2px solid;
+        margin: 0 20px 0 0;
+        flex: 1 0 20px;
+      }
+      &:after {
+        margin: 0 0 0 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #dividerWrap {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 20px;
+    padding: -10px 0 -10px;
+    justify-content: center;
+  }
+
+  .split1 {
+    justify-content: center;
+  }
+  .contentDivider1 {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+
+    height: 100%;
+    min-width: 100%;
+
+    .dividedText1 {
+      &:before,
+      &:after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        left: 50%;
+        border-left: 2px solid black;
+      }
+      &:before {
+        bottom: 50%;
+        top: 0;
+        margin-bottom: 20px;
+      }
+      &:after {
+        top: 50%;
+        bottom: 0;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .navbar {
+    height: 100px;
+  }
+  .navbar-brand {
+    font-size: 15px;
+  }
+  .navbar img {
+    /* height: 100px; */
+    height: 20px;
+  }
+  .cards {
+    width: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Namaz'Notifier",
+    "short_name": "NamazRem",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fdfdfd",
+    "theme_color": "#db4938",
+    "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icon2.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/Quran1.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/ayatCardQuran.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}
