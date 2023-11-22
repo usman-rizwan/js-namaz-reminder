@@ -22,7 +22,7 @@ let timer = document.getElementById("showTime");
 let namazAfter = document.getElementById("namazAfter");
 
 function displayTime() {
-    timer.innerHTML = `<h3 class="cl-g"> ${moment().format("LTS")} </h3> <h5> ${moment().format("Do MMM YYYY")} </h5>`;
+    timer.innerHTML = `<h3 class="cl-g clock"> ${moment().format("LTS")} </h3> <h5 > ${moment().format("Do MMM YYYY")} </h5>`;
 }
 
 setInterval(displayTime, 1000);
@@ -35,19 +35,20 @@ let isha = "19:02:00";
 function showPrayers() {
     const newTime = moment().format("HH:mm:ss");
     if (newTime >= fajr && newTime < zuhr) {
-        namazAfter.innerHTML = `Next Prayer Will Be Zuhr At <br/>  <h3 class="cl-g">${zuhr} pm </h3>`;
+        namazAfter.innerHTML = `Next Prayer Will Be Zuhr At  <h3 class="cl-g clock">${zuhr} pm </h3>`;
     } else if (newTime >= zuhr && newTime < asr) {
-        namazAfter.innerHTML = `Next Prayer Will Be Asr At <br/>  <h3 class="cl-g">${asr} pm </h3>`;
+        namazAfter.innerHTML = `Next Prayer Will Be Asr At  <h3 class="cl-g clock">${asr} pm </h3>`;
     } else if (newTime >= asr && newTime < maghrib) {
-        namazAfter.innerHTML = `Next Prayer Will Be Asr At <br/>  <h3 class="cl-g">${maghrib} pm </h3>`;
+        namazAfter.innerHTML = `Next Prayer Will Be Asr At   <h3 class="cl-g clock">${maghrib} pm </h3>`;
     } else if (newTime >= maghrib && newTime < isha) {
-        namazAfter.innerHTML = `Next Prayer Will Be Isha At <br/>  <h3 class="cl-g">${isha} pm </h3>`;
-    } else  {
-        namazAfter.innerHTML = `Next Prayer Will Be Fajr At <br/> <h3 class="cl-g">${fajr} am </h3> `;
+        namazAfter.innerHTML = `Next Prayer Will Be Isha At   <h3 class="cl-g clock">${isha} pm </h3> `;
+    } else {
+        namazAfter.innerHTML = `Next Prayer Will Be Fajr At <h3 class="cl-g clock">${fajr} am </h3> `;
     }
 }
-
 setInterval(showPrayers, 1000);
+
+
 function checkAndSendNotification() {
     const currentTime = moment().format("HH:mm:ss");
 
@@ -72,7 +73,6 @@ function sendNotification(prayer) {
         // Request notification permission
         Notification.requestPermission().then((permission) => {
             if (permission === "granted") {
-                // Create a notification
                 const notification = new Notification("Namaz Reminder", {
                     body: `It\'s time for your ${prayer} Namaz.`,
                     icon: "/images/icon.png",
