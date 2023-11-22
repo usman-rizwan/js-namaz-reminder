@@ -2,7 +2,7 @@
   font-family: "Poppins", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.my-body {
+body {
   background-color: #e3e4e3;
 }
 #showTime {
@@ -44,6 +44,9 @@
 .cards {
   background-color: #7bb82b;
 }
+.red{
+  color: red ;
+}
 .cl-g {
   color: #7bb82b;
 }
@@ -55,9 +58,7 @@
   font-family: 'inter', 'Lucida Sans Regular', 'Lucida Grande', sans-serif;
   font-size: 20px;
 }
-/* .img-fluid {
-  animation: animate__animated animate__fadeIn;
-} */
+
 
 $amiko-stack: Amiko, "Helvetica Neue", Helvetica, Arial, sans-serif;
 

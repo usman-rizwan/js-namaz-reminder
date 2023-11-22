@@ -35,15 +35,15 @@ let isha = "19:02:00";
 function showPrayers() {
     const newTime = moment().format("HH:mm:ss");
     if (newTime >= fajr && newTime < zuhr) {
-        namazAfter.innerHTML = `Next Prayer Will Be Zuhr At  <h3 class="cl-g clock">${zuhr} pm </h3>`;
+        namazAfter.innerHTML = `Next Prayer Will Be  <span class="cl-g "> Zuhr </span> At  <h3 class="cl-g clock">${zuhr} pm </h3>`;
     } else if (newTime >= zuhr && newTime < asr) {
-        namazAfter.innerHTML = `Next Prayer Will Be Asr At  <h3 class="cl-g clock">${asr} pm </h3>`;
+        namazAfter.innerHTML = `Next Prayer Will Be <span class="cl-g "> Asr </span> At  <h3 class="cl-g clock">${asr} pm </h3>`;
     } else if (newTime >= asr && newTime < maghrib) {
-        namazAfter.innerHTML = `Next Prayer Will Be Asr At   <h3 class="cl-g clock">${maghrib} pm </h3>`;
+        namazAfter.innerHTML = `Next Prayer Will Be  <span class="cl-g "> Maghrib </span> At   <h3 class="cl-g clock">${maghrib} pm </h3>`;
     } else if (newTime >= maghrib && newTime < isha) {
-        namazAfter.innerHTML = `Next Prayer Will Be Isha At   <h3 class="cl-g clock">${isha} pm </h3> `;
+        namazAfter.innerHTML = `Next Prayer Will Be  <span class="cl-g "> Isha </span> At   <h3 class="cl-g clock">${isha} pm </h3> `;
     } else {
-        namazAfter.innerHTML = `Next Prayer Will Be Fajr At <h3 class="cl-g clock">${fajr} am </h3> `;
+        namazAfter.innerHTML = `Next Prayer Will Be <span class="cl-g "> Fajr </span> At <h3 class="cl-g clock">${fajr} am </h3> `;
     }
 }
 setInterval(showPrayers, 1000);
