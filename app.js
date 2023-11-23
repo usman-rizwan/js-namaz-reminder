@@ -33,8 +33,8 @@ let maghrib = "05:43:00";
 let isha = "07:02:00";
 
 function showPrayers() {
-    const newTime = moment().format("LTS");
-    // console.log(newTime);    
+    const newTime = moment().format("HH:mm:ss");
+    console.log(newTime);    
     if (newTime >= fajr && newTime < zuhr) {
         namazAfter.innerHTML = `Next Prayer Will Be  <span class="cl-g "> Zuhr </span> At  <h3 class="cl-g clock">${zuhr} PM </h3>`;
     } else if (newTime >= zuhr && newTime < asr) {
