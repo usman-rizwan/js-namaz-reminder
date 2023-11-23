@@ -3,8 +3,8 @@
     "short_name": "NamazRem",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#fdfdfd",
-    "theme_color": "#db4938",
+    "background_color": "#e3e4e3",
+    "theme_color": "#328433",
     "orientation": "portrait-primary",
   "icons": [
     {
