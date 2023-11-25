@@ -1,7 +1,5 @@
 const namazNotifier = "namaz-reminder-site-v1"
 const assets = [
-    "/",
-    "/index.html",
     "/style.css",
     "/app.js",
     "/images/icon.png",
