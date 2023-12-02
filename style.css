@@ -2,6 +2,10 @@
   font-family: "Poppins", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+@font-face {
+  font-family: "clockfonts";
+  src: url(fonts/digital-7.mono.ttf);
+}
 body {
   background-color: #e3e4e3;
 }
@@ -32,7 +36,7 @@ body {
   max-height: 100%;
 }
 .clock{
-  font-family: "clockicons";
+  font-family: "clockfonts";
   font-size: 40px;
 }
 .bg-gray {
