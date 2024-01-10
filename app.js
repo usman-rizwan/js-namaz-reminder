@@ -65,16 +65,16 @@ async function namazTime() {
     let namazTimesByDate = {};
 
     data.data.forEach((dayData) => {
-      date = dayData.date.readable;
+      date = `${moment().format("Do MMM YYYY")}`;
       fajr = dayData.timings.Fajr;
       zuhr = dayData.timings.Dhuhr;
       asr = dayData.timings.Asr;
       maghrib = dayData.timings.Maghrib;
       isha = dayData.timings.Isha;
-
       
       namazTimesByDate[date] = { fajr, zuhr, asr, maghrib, isha };
     });
+ 
     fajrTime.innerHTML = `${moment(fajr, "HH:mm:ss").format("hh:mm A")}`;
     zuhrTime.innerHTML = `${moment(zuhr, "HH:mm:ss").format("hh:mm A")}`;
     asrTime.innerHTML = `${moment(asr, "HH:mm:ss").format("hh:mm A")}`;
