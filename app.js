@@ -61,7 +61,7 @@ async function namazTime() {
     let api = `https://api.aladhan.com/v1/calendarByAddress/${latestYear}/${latestMonth}?address=karachi&method=2`;
     let data = await fetch(api);
     let response = await data.json();
-    console.log("dataa" , response);
+    // console.log("dataa" , response);
 
     let namazTimesByDate = {};
 
