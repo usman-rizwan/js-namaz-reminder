@@ -30,28 +30,85 @@ function displayTime() {
 let latestDate = new Date();
 let latestMonth = latestDate.getMonth() + 1;
 let latestYear = latestDate.getFullYear();
-console.log("latestYear", latestMonth);
+// console.log("latestYear", latestMonth);
+
+// async function namazTime() {
+//   const api = `https://api.aladhan.com/v1/calendarByAddress/${latestYear}/${latestMonth}?address=karachi&method=2`;
+//   let res = await fetch(api);
+//   let data = await res.json();
+//   console.log("data" , data);
+//   return data
+// }
+// async function getDataFromNamazTime() {
+//     const result = await namazTime();
+//     console.log(result + "with api");
+// }
+// getDataFromNamazTime()
+let date;
+let fajr;
+let zuhr;
+let asr;
+let maghrib;
+let isha;
+let fajrTime = document.getElementById("fajrTime");
+let zuhrTime = document.getElementById("zuhrTime");
+let asrTime = document.getElementById("asrTime");
+let maghribTime = document.getElementById("maghribTime");
+let ishaTime = document.getElementById("ishaTime");
 
 async function namazTime() {
-  let api = `https://api.aladhan.com/v1/calendarByAddress/${latestYear}/${latestMonth}?address=karachi&method=2`;
-  let res = await fetch(api);
-  let data = await res.json();
-  console.log("data" , data);
-  return data
+  try {
+    let api = `https://api.aladhan.com/v1/calendarByAddress/${latestYear}/${latestMonth}?address=karachi&method=2`;
+    let res = await fetch(api);
+    let data = await res.json();
+
+    let namazTimesByDate = {};
+
+    data.data.forEach((dayData) => {
+      date = dayData.date.readable;
+      fajr = dayData.timings.Fajr;
+      zuhr = dayData.timings.Dhuhr;
+      asr = dayData.timings.Asr;
+      maghrib = dayData.timings.Maghrib;
+      isha = dayData.timings.Isha;
+
+      
+      namazTimesByDate[date] = { fajr, zuhr, asr, maghrib, isha };
+    });
+    fajrTime.innerHTML = `${moment(fajr, "HH:mm:ss").format("hh:mm A")}`;
+    zuhrTime.innerHTML = `${moment(zuhr, "HH:mm:ss").format("hh:mm A")}`;
+    asrTime.innerHTML = `${moment(asr, "HH:mm:ss").format("hh:mm A")}`;
+    maghribTime.innerHTML = `${moment(maghrib, "HH:mm:ss").format("hh:mm A")}`;
+    ishaTime.innerHTML = `${moment(isha, "HH:mm:ss").format("hh:mm A")}`;
+
+
+    // console.log(
+    //   "Namaz times for the first date:",
+    //   namazTimesByDate[data.data[0].date.readable],
+    //   " date ==>",
+    //   date
+    // );
+
+  
+    return namazTimesByDate;
+  } catch (error) {
+    console.error("Error fetching namaz time data:", error);
+    
+  }
 }
-namazTime();
 
 
+setInterval(namazTime, 3000); 
 setInterval(displayTime, 1000);
-let fajr = "05:25:00";
-let zuhr = "12:17:00";
-let asr = "16:07:00";
-let maghrib = "17:43:00";
-let isha = "19:02:00";
+// let fajr = "05:25:00";
+// let zuhr = "12:17:00";
+// let asr = "16:07:00";
+// let maghrib = "17:43:00";
+// let isha = "19:02:00";
 
 function showPrayers() {
   const newTime = moment().format("HH:mm:ss");
-  console.log(newTime);
+
   if (newTime >= fajr && newTime < zuhr) {
     namazAfter.innerHTML = `Next Prayer Will Be  <span class="cl-g "> Zuhr </span> At  <h3 class="cl-g clock">${moment(
       zuhr,
@@ -73,10 +130,10 @@ function showPrayers() {
       "HH:mm:ss"
     ).format("hh:mm A")} </h3> `;
   } else {
-    namazAfter.innerHTML = `Next Prayer Will Be <span class="cl-g "> Fajr </span> At <h3 class="cl-g clock">${moment(
-      fajr,
+    namazAfter.innerHTML = `Next Prayer Will Be <span class="cl-g "> Fajr </span> At <h3 class="cl-g clock"> ${moment(
+      isha,
       "HH:mm:ss"
-    ).format("hh:mm A")} </h3> `;
+    ).format("hh:mm A")}  </h3> `;
   }
 }
 setInterval(showPrayers, 1000);
