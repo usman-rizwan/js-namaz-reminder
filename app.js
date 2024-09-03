@@ -105,7 +105,7 @@ function showPrayers() {
     ).format("hh:mm A")} </h3> `;
   } else {
     namazAfter.innerHTML = `Next Prayer Will Be <span class="cl-g "> Fajr </span> At <h3 class="cl-g clock"> ${moment(
-      isha,
+      fajr,
       "HH:mm:ss"
     ).format("hh:mm A")}  </h3> `;
   }
