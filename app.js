@@ -144,7 +144,19 @@ function sendNotification(prayer) {
 }
 
 window.onload = function () {
+  let currentDate = moment().format("DD MMM YYYY");
   namazTime();
+
+  setInterval(() => {
+    let newDate = moment().format("DD MMM YYYY");
+    console.log(newDate);
+    if (currentDate != newDate) {
+      namazTime();
+      currentDate = newDate;
+      // console.log("current date", currentDate);
+    }
+  }, 600000);
+
   setInterval(checkAndSendNotification, 1000);
   setInterval(displayTime, 1000);
 };
